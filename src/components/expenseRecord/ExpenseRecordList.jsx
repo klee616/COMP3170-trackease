@@ -19,7 +19,7 @@ export default function ExpenseRecordList({ }) {
                         <div>{ cate.name } </div>
                         <div>{record.type==1?'Income':'Expense'}</div>
                         <div>${record.amount}</div>
-                        <div>
+                        <div className='button-box'>
                             <button>Edit</button>
                             <button>Delete</button>
                         </div>

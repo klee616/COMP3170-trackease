@@ -45,17 +45,15 @@ export default function categoryList() {
             <div>
                 <h2>Expense Category</h2>
             </div>
-
+            <div>
+                <h3>Category List</h3>
+            </div>
             <div>
                 <form onSubmit={onSubmitCreateCategoryForm}>
                     <label htmlFor="categoryName">Name:</label>
                     <input type="text" id='categoryName' name='categoryName' value={category.name} onChange={onChangeCategoryName} />
                     <button>Create</button>
                 </form>
-            </div>
-
-            <div>
-                <h3>Category List</h3>
             </div>
             {
                 categories && categories.map((cate, index) => {
