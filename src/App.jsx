@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Category from './components/category/CategoryList'
+import ExpenseRecordList from './components/expenseRecord/ExpenseRecordList'
+import ExpenseRecordForm from './components/expenseRecord/ExpenseRecordForm'
 
 function App() {
 
