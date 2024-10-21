@@ -6,8 +6,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function ExpenseRecordForm() {
-    const [categories, setCategories] = useState(initialCategory);
+export default function ExpenseRecordForm({categories}) {
 
     const [initialRecord, setInitRecord] = useState({
         id: nanoid(),

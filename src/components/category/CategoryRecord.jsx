@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './category.css'
 
 
-const CategoryRecord = ({ category }) => {
+const CategoryRecord = ({ category ,updateCategory, deleteCategory }) => {
     const [editing, setEditing] = useState(false);
 
     const [editCategory, setEditCategory] = useState(category);
@@ -15,13 +15,18 @@ const CategoryRecord = ({ category }) => {
     const onChangeCategoryName = (e) => {
         e.preventDefault();
         setEditCategory({ ...editCategory, name: e.target.value })
+        updateCategory(editCategory)
     }
 
     const cancelEdit = (e) => {
         e.preventDefault();
-        console.log(category)
         setEditCategory(category);
         setEditing(false);
+    }
+    const handleDelete = (e) => {
+        e.preventDefault();
+        deleteCategory(editCategory);
+
     }
     return (<>
         <div className='record-container'>
