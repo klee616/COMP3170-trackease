@@ -49,9 +49,9 @@ export default function categoryList({ cate, createNewCategory ,updateCategory, 
                 </div>
                 {
                     categories && categories.map((cate, index) => {
-                        return (<>
+                        return (
                             <CategoryRecord key={index} category={cate}  updateCategory={updateCategory} deleteCategory={deleteCategory}  />
-                        </>)
+                      )
                     })
                 }
             </div>
