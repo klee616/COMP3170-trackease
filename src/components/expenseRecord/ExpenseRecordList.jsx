@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { initialExpense, initialCategory } from '../../fixtures'
 import './expense.css'
 
-export default function ExpenseRecordList({ }) {
-    const [ expenseList, setExpenseList] = useState(initialExpense);
-    const [categories, setCategories] = useState(initialCategory);
+export default function ExpenseRecordList({expensies }) {
+    const [ expenseList, setExpenseList] = useState(expensies);
 
 
     return (<>
