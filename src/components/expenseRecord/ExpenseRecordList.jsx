@@ -9,7 +9,7 @@ export default function ExpenseRecordList({expensies }) {
     <h2>Record</h2>
         {
             expenseList && expenseList.map((record, index) => {
-                let cate =  categories.filter((category)=>{ return category.id==record.category  });
+                let cate =  expenseList.filter((category)=>{ return category.id==record.category  });
                 console.log(cate)
                 return (<>
                     <div className='record-container'>
