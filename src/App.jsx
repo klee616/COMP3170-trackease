@@ -45,7 +45,7 @@ function App() {
     name: '',
     category: -1,
     amount: 0.00,
-    type: '0', //0=expensive, 1=income,
+    recordType: 'Expense', //0=expensive, 1=income,
     datetime: Date(),
     note: ''
   });
@@ -60,7 +60,7 @@ function App() {
       name: '',
       category: -1,
       amount: 0.00,
-      type: '0', //0=expensive, 1=income,
+      recordType: 'Expense', //0=expensive, 1=income,
       datetime: Date(),
       note: ''
     };
@@ -104,7 +104,7 @@ function App() {
 
   const updateExpenseRecord = (item) => {
     setExpense(item)
-    console.log('test')
+    console.log(item)
   }
 
   return (

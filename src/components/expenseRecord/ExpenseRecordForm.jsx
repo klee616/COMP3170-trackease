@@ -4,31 +4,33 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ExpenseRecordForm({ categories, expense, updateRecord, newRecord, updateExpenseRecord }) {
-
+    console.log(expense.recordType)
 
     const onChangeRecodeName = (e) => {
         e.preventDefault();
-        const record  = { ...expense, name: e.target.value };
+        const record = { ...expense, name: e.target.value };
         updateExpenseRecord(record);
     }
     const onChangeCategory = (e) => {
         e.preventDefault();
-        const record  = { ...expense, category: e.target.value };
+        const record = { ...expense, category: e.target.value };
         updateExpenseRecord(record);
     }
     const onChangeAmount = (e) => {
         e.preventDefault();
-        const record  = { ...expense, amount: e.target.value };
+        const record = { ...expense, amount: e.target.value };
         updateExpenseRecord(record);
     }
-    const handleClick = (e) => {
+    const handleOptionChange = (e) => {
+        console.log(e.target.value)
         e.preventDefault();
-        const record  = { ...expense, type: e.target.value };
+        const record = { ...expense, recordType: e.target.value };
+        console.log(record)
         updateExpenseRecord(record);
     }
     const onChangeNote = (e) => {
         e.preventDefault();
-        const record  = { ...expense, note: e.target.value };
+        const record = { ...expense, note: e.target.value };
         updateExpenseRecord(record);
     }
     const onSubmitForm = (e) => {
@@ -68,17 +70,13 @@ export default function ExpenseRecordForm({ categories, expense, updateRecord, n
             <div>
                 <label >Type</label>
                 <label>
-                    <input type="radio" name='type' value='0'
-                        onClick={handleClick}
-                        defaultChecked={expense.type == '0'}
-                    />
+                    <input type="radio" value="Income" checked={expense.recordType == 'Income'} onChange={handleOptionChange} />
+
                     Income</label>
                 <label>
-                    <input type="radio" name='type' value='1'
-                        onClick={handleClick}
-                        defaultChecked={expense.type == '1'}
-                    />
-                    Expense</label>
+                    <input type="radio" value="Expense" checked={expense.recordType == 'Expense'} onChange={handleOptionChange} />
+                    Expense
+                </label>
             </div>
             <div>
                 <label >Date

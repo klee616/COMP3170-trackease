@@ -17,7 +17,7 @@ export default function ExpenseRecordList({ expensies, deletedRecord, setEditing
                 return (
                     <div key={index} className='record-container'>
                         <div>{record.name}</div>
-                        <div>{record.type == 1 ? 'Income' : 'Expense'}</div>
+                        <div>{record.recordType}</div>
                         <div>${record.amount}</div>
                         <div className='button-box'>
                             <button onClick={handleEdit}>Edit</button>
