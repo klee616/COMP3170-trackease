@@ -7,7 +7,6 @@ const CategoryRecord = ({ category ,updateCategory, deleteCategory }) => {
 
     const [editCategory, setEditCategory] = useState(category);
 
-    console.log(category);
     const onSubmitForm = (e) => {
         e.preventDefault();
         updateCategory(editCategory)

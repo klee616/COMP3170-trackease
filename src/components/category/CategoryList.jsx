@@ -14,7 +14,6 @@ export default function categoryList({ cate, createNewCategory ,updateCategory, 
         const onChangeCategoryName = (e) => {
             e.preventDefault();
             setCategory({ ...category, name: e.target.value })
-            console.log(category)
 
         }
         const onSubmitCreateCategoryForm = (e) => {
