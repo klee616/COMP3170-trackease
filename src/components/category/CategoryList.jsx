@@ -3,9 +3,7 @@ import { nanoid } from 'nanoid';
 import CategoryRecord from './CategoryRecord';
 
 export default function categoryList({ cate, createNewCategory ,updateCategory, deleteCategory  }) {
-
-
-        const [categories, setCategories] = useState(cate);
+        //const [categories, setCategories] = useState(cate);
         const [initialCategoryData, setInitialCategoryData] = useState({
             id: nanoid(),
             name: ''
@@ -21,8 +19,6 @@ export default function categoryList({ cate, createNewCategory ,updateCategory, 
         }
         const onSubmitCreateCategoryForm = (e) => {
             e.preventDefault();
-            console.log(category)
-            setCategories([...categories, category])
             createNewCategory(category);
             setCategory(
                 {
@@ -48,9 +44,9 @@ export default function categoryList({ cate, createNewCategory ,updateCategory, 
                     </form>
                 </div>
                 {
-                    categories && categories.map((cate, index) => {
+                    cate && cate.map((category, index) => {
                         return (
-                            <CategoryRecord key={index} category={cate}  updateCategory={updateCategory} deleteCategory={deleteCategory}  />
+                            <CategoryRecord key={index} category={category} updateCategory={updateCategory} deleteCategory={deleteCategory}  />
                       )
                     })
                 }

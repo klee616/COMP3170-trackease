@@ -27,11 +27,11 @@ function App() {
     });
     setCategories(temp);
   }
-  const deleteCategory = () => {
+  const deleteCategory = (category) => {
 
     const temp = [];
     categories.map((item, index) => {
-      if (item.id !== category.id) {
+      if (item.id != category.id) {
         temp.push(item)
       }
     });

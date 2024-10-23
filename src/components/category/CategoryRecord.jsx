@@ -7,15 +7,16 @@ const CategoryRecord = ({ category ,updateCategory, deleteCategory }) => {
 
     const [editCategory, setEditCategory] = useState(category);
 
+    console.log(category);
     const onSubmitForm = (e) => {
         e.preventDefault();
+        updateCategory(editCategory)
         setEditing(false);
     }
 
     const onChangeCategoryName = (e) => {
         e.preventDefault();
         setEditCategory({ ...editCategory, name: e.target.value })
-        updateCategory(editCategory)
     }
 
     const cancelEdit = (e) => {
@@ -23,9 +24,8 @@ const CategoryRecord = ({ category ,updateCategory, deleteCategory }) => {
         setEditCategory(category);
         setEditing(false);
     }
-    const handleDelete = (e) => {
-        e.preventDefault();
-        deleteCategory(editCategory);
+    const handleDelete = () => {
+        deleteCategory(category);
 
     }
     return (<>
@@ -40,12 +40,12 @@ const CategoryRecord = ({ category ,updateCategory, deleteCategory }) => {
                 </> : <>
                     <div>
                         <label>
-                            {editCategory.name}
+                        {category.name} 
                         </label>
                     </div>
                     <div>
                         <button onClick={() => setEditing(true)}>Edit</button>
-                        <button >Delete</button>
+                        <button onClick={() => handleDelete(category)} >Delete</button>
                     </div>
                 </>}
         </div>
