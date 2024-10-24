@@ -45,6 +45,11 @@ export default function ExpenseRecordForm({ categories, expense, updateRecord, n
         console.log('after run handle Clear')
     }
 
+    const onChangeDateTime = (datetime) => {
+        const recore = {...expense, datetime};
+        updateExpenseRecord(recore);
+    };
+
     return (<>
         <h2>Create / Edit Record</h2>
         <form onSubmit={onSubmitForm}>
@@ -80,7 +85,10 @@ export default function ExpenseRecordForm({ categories, expense, updateRecord, n
             </div>
             <div>
                 <label >Date
-                    <DatePicker selected={expense.datetime} /></label>
+                    <DatePicker 
+                    selected={expense.datetime}
+                    onChange={onChangeDateTime}
+                    /></label>
             </div>
             <div>
                 <label>Note
