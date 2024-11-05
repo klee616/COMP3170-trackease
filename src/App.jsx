@@ -6,6 +6,9 @@ import ExpenseRecordForm from './components/expenseRecord/ExpenseRecordForm'
 import { initialCategory, initialExpense } from './fixtures'
 import { nanoid } from 'nanoid';
 
+import PieChart from './components/charts/PieChart'
+
+
 function App() {
 
   const [categories, setCategories] = useState(initialCategory);
@@ -117,6 +120,8 @@ function App() {
           <ExpenseRecordList expensies={expensies} deletedRecord={deletedRecord} setEditingRecord={setEditingRecord} />
         </div>
         <div>
+
+          <PieChart expensies={expensies} categories={categories} />
           <Category cate={categories} createNewCategory={createNewCategory} updateCategory={updateCategory} deleteCategory={deleteCategory} />
         </div>
       </div>
